@@ -9,7 +9,7 @@ black = (0,0,0)
 gravity = 200
 run = True
 #====================
-#
+
 # initialize pygame and screen size
 pygame.init()
 gameDisplay = pygame.display.set_mode((screensize,screensize))
