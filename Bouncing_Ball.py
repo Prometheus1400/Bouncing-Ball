@@ -26,7 +26,7 @@ class Ball:
         self.new_x = screensize // 2
         self.new_y = screensize // 2
 
-    def move(self,time): # time is in milliseconds
+    def move(self,time): # time is in milliseconds #
         time = time / 1000
         time_change_y = time - self.old_time_y
         self.new_y = int(self.old_y + (self.old_v_y)*time_change_y + (1/2)*self.acceleration_y*(time_change_y**2))
@@ -34,7 +34,7 @@ class Ball:
 
         if self.new_y >= 1975 or self.new_y <= 25 :
             self.old_y = self.new_y
-            self.old_v_y = int(-1.01 * self.new_v_y)
+            self.old_v_y = int(-0.9 * self.new_v_y)
             self.old_time_y = time
 
         time_change_x = time - self.old_time_x
@@ -43,7 +43,7 @@ class Ball:
 
         if self.new_x >= 1975 or self.new_x <= 25 :
             self.old_x = self.new_x
-            self.old_v_x = int(-1.05 * self.new_v_x)
+            self.old_v_x = int(-0.9 * self.new_v_x)
             self.old_time_x = time
 
     def user_input(self,key):
