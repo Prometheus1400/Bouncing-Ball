@@ -1,23 +1,23 @@
 import pygame
 from Bouncing_Ball import Ball
 #
-#====================
+# ====================
 screensize = 2000
 ball_radius = 25
-red = (255,0,0)
-black = (0,0,0)
+red = (255, 0, 0)
+black = (0, 0, 0)
 gravity = 200
 run = True
-#====================
+# ====================
 
 # initialize pygame and screen size
 pygame.init()
-gameDisplay = pygame.display.set_mode((screensize,screensize))
+gameDisplay = pygame.display.set_mode((screensize, screensize))
 
 # initialize Ball class =============
-circle = Ball(ball_radius,red,gravity)
+circle = Ball(ball_radius, red, gravity)
 circle.set_position(screensize)
-#====================================
+# ====================================
 
 last_key_pressed = None
 while run == True:
@@ -29,11 +29,11 @@ while run == True:
         if event.type == pygame.KEYDOWN:
             last_key_pressed = event.key
             circle.user_input(last_key_pressed)
-    #incrementally moves the circle.
+    # incrementally moves the circle.
     circle.move(pygame.time.get_ticks())
-    #clears old drawings
+    # clears old drawings
     gameDisplay.fill(black)
-    #draws new circle
+    # draws new circle
     circle.draw(gameDisplay)
     pygame.display.update()
     print(circle.new_y)
